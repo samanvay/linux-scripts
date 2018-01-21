@@ -8,8 +8,9 @@ mkdir .ssh
 chmod 700 /home/nhsrc/.ssh
 
 # copy your public key here
-vi ~/.ssh/authorized_keys
-chmod 600 /home/nhsrc/.ssh/authorized_keys
+mkdir ~/.ssh
+ssh-copy-id -i ~/.ssh/id_rsa.pub nhsrc1@10.31.37.23
+chmod 600 ~/.ssh/authorized_keys
 
 # RSAAuthentication and PubkeyAuthentication to yes
 #Match User !root

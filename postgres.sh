@@ -9,9 +9,15 @@ sudo systemctl start postgresql
 sudo systemctl enable postgresql
 
 sudo -i -u postgres
+psql
 
-
+# openchs
 CREATE USER openchs WITH PASSWORD 'password';
-CREATE DATABASE openchs;
+CREATE DATABASE facilities_assessment_nhsrc;
 GRANT ALL PRIVILEGES ON DATABASE openchs TO openchs;
 
+# nhsrc
+CREATE USER nhsrc WITH PASSWORD 'password';
+CREATE DATABASE openchs;
+GRANT ALL PRIVILEGES ON DATABASE facilities_assessment_nhsrc TO nhsrc;
+psql facilities_assessment_nhsrc -c 'create extension if not exists "uuid-ossp"'
