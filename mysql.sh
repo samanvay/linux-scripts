@@ -7,4 +7,8 @@ yum install mysql
 yum install mysql-server
 service mysqld start
 mysql_secure_installation
-#https://support.rackspace.com/how-to/installing-mysql-server-on-centos/
+# https://support.rackspace.com/how-to/installing-mysql-server-on-centos/
+
+# for database dump
+mysql> use mydb;
+mysql> source db_backup.dump;

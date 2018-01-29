@@ -21,3 +21,7 @@ CREATE USER nhsrc WITH PASSWORD 'password';
 CREATE DATABASE openchs;
 GRANT ALL PRIVILEGES ON DATABASE facilities_assessment_nhsrc TO nhsrc;
 psql facilities_assessment_nhsrc -c 'create extension if not exists "uuid-ossp"'
+
+#ssh tunnel
+ssh -L 3333:serverdb.opench.org:5432 prod-server
+psql -h localhost -p 3333 -Uopenchs openchs
