@@ -25,3 +25,22 @@ service httpd restart
 firewall-cmd --permanent --zone=public --add-service=http
 firewall-cmd --permanent --zone=public --add-service=https
 firewall-cmd --reload
+
+
+#UBUNTU
+# https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04
+apt-get install apache2
+apache2ctl configtest
+service apache2 restart
+ufw app list
+ufw app info "Apache Full"
+ufw allow in "Apache Full"
+chown -R demo:www-data *
+chown -R :www-data /var/www/html/wp-content/uploads
+
+# Virtual Host
+# https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-16-04
+cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/ijme.in.conf
+a2ensite ijme.in.conf
+a2dissite 000-default.conf
+service apache2 restart

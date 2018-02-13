@@ -16,3 +16,4 @@ unzip -q wordpress-4.6.10.zip -d /var/www/html/
 chown -R apache:apache /var/www/html/ijme
 chmod -R 755 /var/www/html/ijme
 chown -R :apache /var/www/html/ijme/wp-content/uploads
+
