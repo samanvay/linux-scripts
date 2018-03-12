@@ -44,3 +44,14 @@ cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/ij
 a2ensite ijme.in.conf
 a2dissite 000-default.conf
 service apache2 restart
+
+# SSL
+# https://www.digitalocean.com/community/tutorials/how-to-create-a-ssl-certificate-on-apache-for-ubuntu-14-04
+sudo a2enmod ssl
+sudo service apache2 restart
+sudo mkdir /etc/apache2/ssl
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
+sudo vi /etc/apache2/sites-available/default-ssl.conf
+
+sudo a2ensite default-ssl.conf
+sudo service apache2 restart

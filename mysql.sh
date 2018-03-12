@@ -22,9 +22,11 @@ mysql_install_db
 
 
 # for database dump
-mysql> CREATE DATABASE frgmxhwawa;
-mysql> use frgmxhwawa;
-mysql> source db_backup.dump;
+CREATE DATABASE frgmxhwawa;
+use frgmxhwawa;
+source db_backup.dump;
 
 # refer to secure note
+CREATE USER 'abc'@'localhost' IDENTIFIED BY 'xyz';
+GRANT ALL PRIVILEGES ON abc . * TO 'abc'@'localhost';
 FLUSH PRIVILEGES;

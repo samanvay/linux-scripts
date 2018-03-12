@@ -17,3 +17,8 @@ chown -R apache:apache /var/www/html/ijme
 chmod -R 755 /var/www/html/ijme
 chown -R :apache /var/www/html/ijme/wp-content/uploads
 
+# ubuntu
+chown -R www-data:www-data /var/www/html/ijmewp
+chmod -R 755 /var/www/html/ijmewp
+chown -R :www-data /var/www/html/ijmewp/wp-content/uploads
+#https://www.digitalocean.com/community/questions/how-can-i-fix-my-wordpress-permalinks
