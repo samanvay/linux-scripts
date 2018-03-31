@@ -13,9 +13,9 @@ yum install php-gd
 
 unzip -q wordpress-4.6.10.zip -d /var/www/html/
 
-chown -R apache:apache /var/www/html/ijme
-chmod -R 755 /var/www/html/ijme
-chown -R :apache /var/www/html/ijme/wp-content/uploads
+chown -R apache:apache /var/www/html/ijmewp
+chmod -R 755 /var/www/html/ijmewp
+chown -R :apache /var/www/html/ijmewp/wp-content/uploads
 
 # ubuntu
 chown -R www-data:www-data /var/www/html/ijmewp
