@@ -2,7 +2,7 @@
 #Generate self-signed certificate
 keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
 
-#Convert pem to PKCS12
+#Convert pem to PKCS12 for Tomcat Server
 cd /etc/letsencrypt/live/gunak.nhsrcindia.org
 openssl pkcs12 -export -in fullchain.pem \
                 -inkey privkey.pem \
@@ -11,6 +11,15 @@ openssl pkcs12 -export -in fullchain.pem \
                  -CAfile chain.pem \
                  -caname root
 
+# Generate certificate for letsencrypt
+git clone https://github.com/letsencrypt/letsencrypt
+service apache2 stop
+./letsencrypt-auto certonly --standalone -d ijme.in -d www.ijme.in -d issuesinmedicalethics.org -d www.issuesinmedicalethics.org --debug
+
+# add to apache
+SSLCertificateFile /etc/letsencrypt/live/dev.bahmnidev.org/cert.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/dev.bahmnidev.org/privkey.pem
+SSLCertificateChainFile /etc/letsencrypt/live/dev.bahmnidev.org/chain.pem
 
 # Local Certificate
 openssl req -x509 -out localhost.crt -keyout localhost.key \

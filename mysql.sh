@@ -22,9 +22,10 @@ mysql_install_db
 
 
 # for database dump
+drop database frgmxhwawa;
 CREATE DATABASE frgmxhwawa;
 use frgmxhwawa;
-source db_backup.dump;
+source frgmxhwawa.sql;
 
 # refer to secure note
 CREATE USER 'abc'@'localhost' IDENTIFIED BY 'xyz';
