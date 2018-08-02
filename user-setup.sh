@@ -9,6 +9,7 @@ chmod 700 /home/nhsrc/.ssh
 
 # copy your public key here
 mkdir ~/.ssh
+ssh-keygen
 ssh-copy-id -i ~/.ssh/id_rsa.pub nhsrc1@10.31.37.23
 chmod 600 ~/.ssh/authorized_keys
 
@@ -21,3 +22,5 @@ vi /etc/ssh/sshd_config
 sudo visudo
 
 service sshd reload
+
+# Ubuntu

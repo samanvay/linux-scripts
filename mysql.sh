@@ -31,3 +31,13 @@ source frgmxhwawa.sql;
 CREATE USER 'abc'@'localhost' IDENTIFIED BY 'xyz';
 GRANT ALL PRIVILEGES ON abc . * TO 'abc'@'localhost';
 FLUSH PRIVILEGES;
+
+# Backup
+mysqldump --all-databases > /mnt/main-backup/mysql-dump.sql
+rm -rf /mnt/main-backup/ijmewp
+cp -r /var/www/html/ijmewp /mnt/main-backup/
+rm -rf /mnt/main-backup/config
+mkdir /mnt/main-backup/config
+cp -r /etc /mnt/main-backup/config
+
+

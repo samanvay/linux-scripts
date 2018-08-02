@@ -3,6 +3,9 @@
 keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
 
 #Convert pem to PKCS12 for Tomcat Server
+make stop_server_nhsrc stop_metabase
+./letsencrypt-auto certonly --standalone -d gunak.nhsrcindia.org --debug
+ls -lt /etc/letsencrypt/live/gunak.nhsrcindia.org
 cd /etc/letsencrypt/live/gunak.nhsrcindia.org
 openssl pkcs12 -export -in fullchain.pem \
                 -inkey privkey.pem \
@@ -27,3 +30,6 @@ openssl req -x509 -out localhost.crt -keyout localhost.key \
   -subj '/CN=localhost' -extensions EXT -config <(
    printf "[dn]\nCN=localhost\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:localhost\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
 keytool -import -alias tomcat -file myCertificate.crt -keystore keystore.p12 -storepass password
+#JKS
+keytool -importkeystore -srckeystore keystore.p12 -srcstoretype pkcs12 -srcalias tomcat -destkeystore keystore.jks -deststoretype jks -deststorepass -destalias tomcat
+keytool -importkeystore -srckeystore keystore.p12 -srcstoretype pkcs12 -srcalias tomcat -destkeystore keystore.jks -deststoretype jks -deststorepass password -destalias tomcat

@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#PHP INI LOCATION = /etc/php5/apache2/php.ini
+
 sudo yum install epel
 
 # for php
