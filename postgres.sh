@@ -30,3 +30,8 @@ psql -h localhost -p 3333 -Uopenchs openchs
 set role role_name
 
 #backup
+
+#login as a user without trust
+psql --host=localhost --dbname=facilities_assessment_nhsrc --username=nhsrc
+
+\copy (SELECT * FROM pg_stat_activity) To '/tmp/connections-when-unable-retrieve.csv' With CSV
