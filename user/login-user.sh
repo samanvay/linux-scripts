@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Create user sam
-adduser sam
+adduser -G wheel --home /home/sam sam # CENTOS
+adduser --ingroup admin --home /home/sam sam # UBUNTU
 passwd sam
 
 # Add to sudo group
