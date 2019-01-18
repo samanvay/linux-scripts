@@ -4,3 +4,8 @@ adduser --system --group --disabled-password --home /home/app --shell /bin/bash 
 # CENTOS
 adduser -d /home/app -m -r -U app
 usermod -L app
+
+chmod g+rwx /home/app
+usermod -aG app sam
+# Is you are using postgres
+usermod -aG app postgres
