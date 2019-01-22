@@ -11,9 +11,9 @@ visudo
 ### add following line
 sam           ALL=(ALL)       NOPASSWD: ALL
 
-# Copy sam's public key - LOCAL SHELL
+# Copy sam's public key
 mkdir ~/.ssh
-ssh-copy-id -i ~/.ssh/id_rsa_sam.pub sam@$SERVER
+ssh-copy-id -i ~/.ssh/id_rsa_sam.pub sam@$SERVER # LOCAL SHELL
 
 # Public key authentication
 vi /etc/ssh/sshd_config
@@ -21,7 +21,7 @@ vi /etc/ssh/sshd_config
 PubkeyAuthentication yes
 PasswordAuthentication no
 
-# Disable root login
+# To disable root login
 vi /etc/ssh/sshd_config
-### Update following
+### The update following
 PermitRootLogin no
