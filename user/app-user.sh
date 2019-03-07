@@ -7,5 +7,5 @@ usermod -L app
 
 chmod g+rwx /home/app
 usermod -aG app sam
-# Is you are using postgres
+# If you are using postgres
 usermod -aG app postgres
