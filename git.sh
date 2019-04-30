@@ -3,6 +3,6 @@ git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(
 
 git checkout -b newLocalBranch remoteName/remoteBranch
 
-git branch nhsrc-feb-release 50b5aedf993a5c515ecf6af12612432ac93bdad1
-git checkout nhsrc-feb-release
+# UseCase: Create a branch from a commit and push to remote
+git checkout -b nhsrc-feb-release  50b5aedf993a5c515ecf6af12612432ac93bdad1
 git push -u origin nhsrc-feb-release
