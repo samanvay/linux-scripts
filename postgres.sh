@@ -1,3 +1,5 @@
+#https://gist.github.com/rgreenjr/3637525
+
 #!/usr/bin/env bash
 sudo yum install postgresql-server postgresql-contrib
 sudo postgresql-setup initdb
