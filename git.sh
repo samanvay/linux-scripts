@@ -7,3 +7,8 @@ git checkout -b newLocalBranch remoteName/remoteBranch
 git checkout -b nhsrc-feb-release  50b5aedf993a5c515ecf6af12612432ac93bdad1
 git push -u origin nhsrc-feb-release
 
+
+#Useful during pull requests
+git checkout -b new-branch-name origin/tracking-branch-name
+git branch --unset-upstream
+git push -u origin xss-bug-fixes # push to new remote branch
