@@ -12,3 +12,7 @@ git push -u origin nhsrc-feb-release
 git checkout -b new-branch-name origin/tracking-branch-name
 git branch --unset-upstream
 git push -u origin xss-bug-fixes # push to new remote branch
+
+#tag
+git tag -a v3.17.4
+git push origin v3.17.4
