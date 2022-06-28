@@ -16,6 +16,8 @@ git push -u origin xss-bug-fixes # push to new remote branch
 #tag
 git tag -a v3.17.4
 git push origin v3.17.4
+## latest remote branch
+for branch in `git branch -r | grep -v HEAD`;do echo -e `git show --format="%ci %cr" $branch | head -n 1` \\t$branch; done | sort -r
 
 #openchs_repos = openchs-client openchs-server infra rules-config openchs-reporting lbp-arogyadoot ashwini calcutta-kids tt-ncd-screening sewa-rural jss unicef-moha kalap auth
 #define _git_multiple
