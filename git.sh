@@ -21,3 +21,4 @@ for branch in `git branch -r | grep -v HEAD`;do echo -e `git show --format="%ci 
 
 #pull another branch without switching
 git fetch origin master:master
+
